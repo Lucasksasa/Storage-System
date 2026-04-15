@@ -25,7 +25,7 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
-    public List<Product> listAllProducts(Product product){
+    public List<Product> listAllProducts(){
         return productRepository.findAll();
     }
 
@@ -41,12 +41,6 @@ public class ProductService {
         product.setPrice(updatedProduct.getPrice());
 
         return productRepository.save(product);
-
     }
-
-
-
-
-
 
 }
