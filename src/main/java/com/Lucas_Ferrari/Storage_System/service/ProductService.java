@@ -33,6 +33,17 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
+    public Product UpdateProduct(Long id, Product updatedProduct){
+
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+        product.setName(updatedProduct.getName());
+        product.setPrice(updatedProduct.getPrice());
+
+        return productRepository.save(product);
+
+    }
+
 
 
 
