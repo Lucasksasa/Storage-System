@@ -2,6 +2,7 @@ package com.Lucas_Ferrari.Storage_System.controller;
 
 import com.Lucas_Ferrari.Storage_System.model.Product;
 import com.Lucas_Ferrari.Storage_System.service.ProductService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,6 +36,14 @@ public class ProductController {
     @DeleteMapping("{id}")
     public void deleteProduct(@PathVariable Long id){
         productService.deleteProductById(id);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Product> productUpdate(@PathVariable Long id, @RequestBody Product productUpdated) {
+
+        Product product = productService.UpdateProduct(id, productUpdated);
+
+        return ResponseEntity.ok(product);
     }
 
 }
