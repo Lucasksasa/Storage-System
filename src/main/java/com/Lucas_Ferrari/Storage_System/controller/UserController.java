@@ -1,6 +1,4 @@
 package com.Lucas_Ferrari.Storage_System.controller;
-
-import com.Lucas_Ferrari.Storage_System.model.Product;
 import com.Lucas_Ferrari.Storage_System.model.User;
 import com.Lucas_Ferrari.Storage_System.service.UserService;
 import org.springframework.http.ResponseEntity;
